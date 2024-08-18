@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./MainContent.module.css";
 import jettArtwork from "../../assets/Jett_artwork.png";
 import harborArtwork from "../../assets/Harbor_artwork.png";
-import videoPlaceholder from "../../assets/image 354.png";
+import valoEdit from "../../assets/Valo Edit.mp4";
 import trapezium from "../../assets/Blue Trapezium.png";
 
 const MainContent = () => {
@@ -25,11 +25,9 @@ const MainContent = () => {
         </div>
         <div className={styles.overlayContent}>
           <div className={styles.videoContainer}>
-          <img
-            src={videoPlaceholder}
-            alt="Character 2"
-            className={styles.character2}
-          />
+            <video autoPlay loop muted playsInline className={styles.video}>
+              <source src={valoEdit} type="video/mp4" />
+            </video>
           </div>
           <div className={styles.textContent}>
             <h2>STATS • INFO • INSIGHTS</h2>

@@ -77,13 +77,19 @@
   flex-direction: column;
 }
 
-.videoContainer{
-  margin-top: 10px;
-  margin-right: 30px;
+.videoContainer {
   display: flex;
   justify-content: flex-end;
-  position: relative;
+  margin-right: 40px;
+  margin-top: 20px;
   z-index: 3;
+}
+
+.video {
+  box-shadow: -10px 10px 10px rgb(19, 30, 34);
+  max-width: 40%; 
+  height: auto;
+  border-radius: 10px;
 }
 
 .textContent h2 {
