@@ -12,8 +12,8 @@ const Header = () => {
         className={styles.logo}
       />
       <nav className={styles.navLinks}>
-        <a href="#home" className={styles.navLink}>HOME</a>
-        <a href="#esports" className={styles.navLink}>ESPORTS</a>
+        <a href="#" className={styles.navLink}>HOME</a>
+        <a href="#" className={styles.navLink}>ESPORTS</a>
       </nav>
     </header>
   );

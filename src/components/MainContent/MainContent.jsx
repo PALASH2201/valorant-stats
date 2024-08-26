@@ -5,8 +5,13 @@ import jettArtwork from "../../assets/Jett_artwork.png";
 import harborArtwork from "../../assets/Harbor_artwork.png";
 import valoEdit from "../../assets/Valo Edit.mp4";
 import trapezium from "../../assets/Blue Trapezium.png";
+import { useNavigate } from "react-router-dom";
 
 const MainContent = () => {
+  const navigate = useNavigate();
+  const handleClick = () =>{
+    navigate('/signin');
+  }
   return (
     <main className={styles.mainContent}>
       <img src={trapezium} alt="Gameplay" className={styles.trapezium} />
@@ -32,7 +37,7 @@ const MainContent = () => {
           <div className={styles.textContent}>
             <h2>STATS • INFO • INSIGHTS</h2>
           </div>
-          <button className={styles.exploreButton}>EXPLORE NOW</button>
+          <button className={styles.exploreButton} onClick={handleClick}>EXPLORE NOW</button>
         </div>
       </div>
     </main>
