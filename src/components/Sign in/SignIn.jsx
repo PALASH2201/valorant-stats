@@ -24,7 +24,7 @@ const SignIn = () => {
                 />
             </div>
             <div className="form-section">
-                <h2>Sign In</h2>
+                <h2 className='signin-text'>Sign In</h2>
                 <form className="signup-form">
                     <input type="text" placeholder="Username" className="input-field" />
                     <input type="email" placeholder="Email" className="input-field" />
@@ -33,11 +33,11 @@ const SignIn = () => {
                         placeholder="Password"
                         className="input-field"
                     />
-                    <button type="submit" className="signup-button">
+                    <button type="submit" className="signup-button" style={{fontFamily:'Tungsten', letterSpacing:'2px'}}>
                         Sign In
                     </button>
                 </form>
-                <p className="login-text">
+                <p className="signup-text" style={{ marginTop: '10px', fontSize:'2rem'}}>
                     Don't Have An Account? <a href="/signup">Sign Up</a>
                 </p>
             </div>
