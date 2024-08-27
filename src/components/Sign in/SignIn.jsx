@@ -27,7 +27,6 @@ const SignIn = () => {
                 <h2 className='signin-text'>Sign In</h2>
                 <form className="signup-form">
                     <input type="text" placeholder="Username" className="input-field" />
-                    <input type="email" placeholder="Email" className="input-field" />
                     <input
                         type="password"
                         placeholder="Password"

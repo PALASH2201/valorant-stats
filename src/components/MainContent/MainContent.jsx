@@ -1,5 +1,6 @@
 // MainContent.js
 import React from "react";
+import Logo from '../../assets/Valorant Logo.png'
 import styles from "./MainContent.module.css";
 import jettArtwork from "../../assets/Jett_artwork.png";
 import harborArtwork from "../../assets/Harbor_artwork.png";
@@ -13,6 +14,18 @@ const MainContent = () => {
     navigate('/signin');
   }
   return (
+    <>
+    <header className={styles.header}>
+      <img
+        src={Logo}
+        alt="Valorant Logo"
+        className={styles.logo}
+      />
+      <nav className={styles.navLinks}>
+        <a href="/" className={styles.navLink}>HOME</a>
+        <a href="https://valorantesports.com/en-GB/" className={styles.navLink}>ESPORTS</a>
+      </nav>
+    </header>
     <main className={styles.mainContent}>
       <img src={trapezium} alt="Gameplay" className={styles.trapezium} />
       <div className={styles.homeContainer}>
@@ -41,6 +54,7 @@ const MainContent = () => {
         </div>
       </div>
     </main>
+    </>
   );
 };
 
