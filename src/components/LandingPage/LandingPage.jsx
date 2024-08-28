@@ -1,7 +1,7 @@
 // MainContent.js
 import React from "react";
 import Logo from '../../assets/Valorant Logo.png'
-import styles from "./MainContent.module.css";
+import styles from "./LandingPage.module.css";
 import jettArtwork from "../../assets/Jett_artwork.png";
 import harborArtwork from "../../assets/Harbor_artwork.png";
 import valoEdit from "../../assets/Valo Edit.mp4";
