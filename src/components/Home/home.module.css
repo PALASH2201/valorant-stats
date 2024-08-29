@@ -102,7 +102,7 @@
 }
 
 .textContainer p {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .viewAgentsBtn{
@@ -117,6 +117,82 @@
 } 
 
 .viewAgentsBtn:hover{
+  color: #000000;
   cursor: pointer;
-  background-color: #121212;
+  background-color: #ffffff;
 } 
+
+.outerContainer{
+  position: relative;
+  background-color: #ECE8FF;
+  background-image: url('../../assets/Split.png');
+  background-repeat: no-repeat;
+  height: 89vh;
+  display: flex;
+}
+
+.outerContainer::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(234, 229, 255, 0.637); 
+  z-index: 1;
+}
+
+.textContainer{
+  font-family: 'Source Serif 4',sans-serif;
+  margin-left: 80px;
+  margin-top: 50px;
+  z-index:2;
+  width: 45%;
+}
+
+.viewWeaponsBtn{
+  margin-top: 40px;
+  font-family: 'Tungsten',sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 10px 60px;
+}
+
+.viewWeaponsBtn:hover{
+  color: #000000;
+  cursor: pointer;
+  background-color: #ff0000;
+} 
+
+.weaponsContainer{
+  z-index: 2;
+  width: 55%;
+} 
+
+.imageContainer{
+  position: relative; 
+  margin-top: 50px;
+  margin-right: 30px;
+  border: 2px solid red;
+  border-radius: 30px 30px 0px 0px;
+} 
+
+.statsHalf{
+  position: relative;
+  background-color: #152033;
+  background-image: url('../../assets/Bind.png');
+  background-repeat: no-repeat;
+} 
+
+.statsHalf::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(234, 229, 255, 0.392);
+  z-index: 1;
+}

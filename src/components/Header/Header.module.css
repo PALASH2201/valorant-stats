@@ -50,6 +50,11 @@
     margin: auto 0;
   } 
   
+  .navLinks a:hover{
+    cursor: pointer;
+    color: red;
+  }
+
   a:visited{
     color: #ffffff;
   }

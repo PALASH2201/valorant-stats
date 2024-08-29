@@ -1,5 +1,5 @@
 import React from 'react';
-import './SignUp.css';
+import './signUp.css';
 import cypherImage from '../../assets/Cypher_artwork.png'; 
 import logo from '../../assets/V_Lockup_Vertical_Navy.png';
 

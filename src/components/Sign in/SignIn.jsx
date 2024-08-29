@@ -1,5 +1,5 @@
 import React from 'react';
-import './SignIn.css';
+import './signIn.css';
 import skyeImage from '../../assets/Skye_artwork.png'; 
 import logo from '../../assets/V_Lockup_Vertical_Navy.png';
 import { useNavigate } from 'react-router-dom';
