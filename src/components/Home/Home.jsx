@@ -11,7 +11,7 @@ const Home = () => {
       <MainContent/>
       <AgentsSection/>
       <ArsenalSection/>
-      {/* <LeaderboardSection/> */}
+      <LeaderboardSection/>
     </>
   );
 };
