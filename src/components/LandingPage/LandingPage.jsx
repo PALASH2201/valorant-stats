@@ -27,7 +27,7 @@ const MainContent = () => {
       </nav>
     </header>
     <main className={styles.mainContent}>
-      <img src={trapezium} alt="Gameplay" className={styles.trapezium} />
+      <div className={styles.trapezium} />
       <div className={styles.homeContainer}>
         <div className={styles.backgroundCharacters}>
           <img

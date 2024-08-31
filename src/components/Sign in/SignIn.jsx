@@ -7,7 +7,8 @@ import { useNavigate } from 'react-router-dom';
 const SignIn = () => {
     return (
         <div className="signup-container">
-            <div className="logo-section">
+            <div className="trapezium-red"/>
+            <div style={{position: 'absolute', zIndex: 2}} className="logo-section">
                 <div className="logo-container">
                 <img
                     src={logo}
@@ -16,14 +17,14 @@ const SignIn = () => {
                 />
                 </div>
             </div>
-            <div className="image-section">
+            <div style={{position: 'absolute', zIndex: 2}} className="image-section">
                 <img
                     src={skyeImage}
                     alt="Valorant Character"
                     className="character-image"
                 />
             </div>
-            <div className="form-section">
+            <div style={{position: 'relative', zIndex: 3}} className="form-section">
                 <h2 className='signin-text'>Sign In</h2>
                 <form className="signup-form">
                     <input type="text" placeholder="Username" className="input-field" />
