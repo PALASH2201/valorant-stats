@@ -1,10 +1,40 @@
 import React from 'react';
 import './signin.css';
+import {useState} from "react";
 import skyeImage from '../../assets/Skye_artwork.png'; 
 import logo from '../../assets/V_Lockup_Vertical_Navy.png';
 import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
+    const [password, setPassword] = useState("")
+    const [email, setEmail] = useState("")
+    const navigate = useNavigate()
+
+    const onSubmit = async (e) => {
+        e.preventDefault()
+
+        const data = {
+            email,
+            password,
+        }
+        const url = "http://127.0.0.1:5000/login" 
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+        }
+        const response = await fetch(url, options)
+        if(response.status !== 201 && response.status !== 200) {
+            const response_data = await response.json()
+            alert(response_data.message)
+        } else {
+            navigate('/home')
+        }
+
+    }
+
     return (
         <div className="signup-container">
             <div className="logo-section">
@@ -25,10 +55,13 @@ const SignIn = () => {
             </div>
             <div className="form-section">
                 <h2 className='signin-text'>Sign In</h2>
-                <form className="signup-form">
-                    <input type="text" placeholder="Username" className="input-field" />
+                <form className="signup-form" onSubmit={onSubmit}>
+                    <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" className="input-field" />
                     <input
                         type="password"
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         placeholder="Password"
                         className="input-field"
                     />
