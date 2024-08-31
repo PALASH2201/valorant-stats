@@ -18,9 +18,16 @@ body {
   z-index: 1;
   font-family: "Arial", sans-serif;
   height: 100vh;
-  background-image: url('../../assets/Polygon 3.png');
-  background-repeat: no-repeat;
 }
+
+.trapezium-red {
+  width: 100%; /* Adjust the width as needed */
+  height: 100%; /* Adjust the height as needed */
+  background-color: #FF4655; /* Use the red color */
+  clip-path: polygon(0 0, 54% 0, 100% 80%, 42% 80%);
+  z-index: 1;
+}
+
 
 .logo-container{
   display: flex;
@@ -30,7 +37,7 @@ body {
 }
 
 .image-section {
-  position: relative;
+  margin-left: 20%;
   width: 50%;
 }
 
