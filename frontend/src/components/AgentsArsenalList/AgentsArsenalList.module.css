@@ -1,0 +1,33 @@
+.agentsListContainer {
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping */
+    padding: 10px 0; /* Adds some padding */
+}
+
+.scrollContainer {
+    display: flex; /* Display as flexbox */
+    gap: 10px; /* Spacing between agent cards */
+}
+
+.agentCard {
+    min-width: 120px; /* Width of each card */
+    height: 150px; /* Height of each card */
+    background-color: #2c2c2c; /* Card background color */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s; /* Smooth scaling effect */
+}
+
+.agentCard:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.agentImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Scale images to fit within the card */
+}

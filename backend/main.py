@@ -4,6 +4,7 @@ from models import User
 from sqlalchemy.exc import IntegrityError
 import sqlite3
 # from werkzeug.security import generate_pasword_hash, check_password_hash
+import requests
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -65,6 +66,54 @@ def login():
             201,
         )
 
+@app.route('/agents', methods=['GET'])
+def agents_list():
+    response = requests.get("https://valorant-api.com/v1/agents?isPlayableCharacter=true")
+    agents = response.json()['data']
+    agents_info = []
+    for agent in agents:
+        info = {
+                "displayName": agent["displayName"],
+                "description": agent["description"],
+                "displayIcon": agent["displayIcon"],
+                "fullPortrait": agent["fullPortrait"],
+                "is_role": True if agent["role"] else False,
+                "abilities": agent["abilities"]
+            }
+        if info["is_role"]:
+            info["role"] = agent["role"]["displayName"]
+            info["role_icon"] = agent["role"]["displayIcon"]
+        agents_info.append(info)
+        print(info["displayName"])
+    
+    
+    return jsonify({"agents": agents_info})
+
+@app.route('/agents/<string:name>', methods=['GET'])
+def get_agent_by_name(name):
+    response = requests.get("https://valorant-api.com/v1/agents?isPlayableCharacter=true")
+    agents = response.json()['data']
+    
+    # Search for the agent with the given name (case-insensitive)
+    for agent in agents:
+        
+        if agent['displayName'].lower() == name.lower():
+            info = {
+                "displayName": agent["displayName"],
+                "description": agent["description"],
+                "displayIcon": agent["displayIcon"],
+                "fullPortrait": agent["fullPortrait"],
+                "is_role": True if agent["role"] else False,
+                "abilities": agent["abilities"]
+            }
+            if info["is_role"]:
+                info["role"] = agent["role"]["displayName"]
+                info["role_icon"] = agent["role"]["displayIcon"]
+
+            return jsonify(info), 200
+    
+    # If no agent is found, return a 404 response
+    return jsonify({"message": "Agent not found"}), 404
 
 if __name__=='__main__':
     with app.app_context():
