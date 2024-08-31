@@ -39,7 +39,8 @@ const SignUp = () => {
     
     return (
         <div className="signup-container">
-            <div className="logo-section">
+            <div className="trapezium-red"/>
+            <div style={{position: 'absolute', zIndex: 2}} className="logo-section">
                 <div className="logo-container">
                 <img
                     src={logo}
@@ -48,7 +49,7 @@ const SignUp = () => {
                 />
                 </div>
             </div>
-            <div className="image-section">
+            <div style={{position: 'absolute', zIndex: 2}} className="image-section">
                 <img
                     src={cypherImage}
                     alt="Valorant Character"
