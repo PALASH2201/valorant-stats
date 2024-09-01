@@ -90,7 +90,7 @@
 
 .agentPortrait {
     max-width: 100%;
-    max-height: 80vh;
+    height: 100vh;
     object-fit: cover;
     border-radius: 10px;
 }
