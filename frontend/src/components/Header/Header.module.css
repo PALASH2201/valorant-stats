@@ -67,6 +67,7 @@
   
   .navLink {
     text-decoration: none;
+    color: #ffffff;
     text-align: center;
     align-self: start;
     flex-basis: auto;

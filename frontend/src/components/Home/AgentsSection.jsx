@@ -1,7 +1,12 @@
 import styles from "./home.module.css";
 import reynaArtwork from "../../assets/Reyna_artwork.png";
 import viperArtwork from "../../assets/Viper_artwork.png";
+import {useNavigate} from "react-router-dom";
 const AgentsSection = () => {
+  const handleClick = () =>{
+     const navigate = useNavigate();
+     navigate('/agents');
+  }
   return (
     <section className={styles.agentsSection}>
       <div className={styles.agentImageContainer}>
@@ -17,10 +22,10 @@ const AgentsSection = () => {
         />
       </div>
       <div className={styles.textContainer}>
-        <h2 style={{marginTop:'80px'}}>AGENTS</h2>
+        <h2 style={{marginTop:'10px'}}>AGENTS</h2>
         <p style={{marginTop:'50px'}}>CREATIVITY IS YOUR GREATEST WEAPON.</p>
         <p style={{marginTop:'50px'}}> More than guns and bullets, you’ll choose an Agent armed with adaptive, swift, and lethal abilities that create opportunities to let your gunplay shine. No two Agents play alike, just as no two highlight reels will look the same.</p>
-        <button className={styles.viewAgentsBtn}>View All Agents</button>
+        <button className={styles.viewAgentsBtn} onClick={handleClick}>View All Agents</button>
       </div>
     </section>
   );
