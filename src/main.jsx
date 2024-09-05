@@ -9,6 +9,7 @@ import {
 import SignUp from './components/Sign Up/SignUp.jsx';
 import SignIn from './components/Sign in/SignIn.jsx';
 import Home from './components/Home/Home.jsx';
+import Weapon from './components/Weapons/Weapon.jsx'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: "/signup", element: <SignUp /> },
       { path: "/signin", element: <SignIn /> },
       { path: "/home", element: <Home /> },
+      { path: "/weapons" , element: <Weapon/>}
     ],
   },
 ]);

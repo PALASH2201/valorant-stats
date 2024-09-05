@@ -6,17 +6,17 @@ const Header = () => {
     <header className={styles.header}>
       <img src={Logo} alt="Valorant Logo" className={styles.logo} />
       <nav className={styles.navLinks}>
-        <a href="#" className={styles.navLink}>
+        <a href="/home" className={styles.navLink}>
           HOME
         </a>
-        <a href="#" className={styles.navLink}>
+        <a href="/agents" className={styles.navLink}>
           AGENTS
         </a>
         <a href="#" className={styles.navLink}>
           STATS
         </a>
         <a href="#" className={styles.navLink}>
-          INFO
+          INFO  
         </a>
         <a href="#" className={styles.navLink}>
           LEADERBOARD
