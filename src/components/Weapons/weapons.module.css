@@ -1,14 +1,50 @@
-.agentsListContainer {
-    width: 100%;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    white-space: nowrap; /* Prevents wrapping */
-    padding: 10px 0; /* Adds some padding */
-    background-color: #152033;
-    position: relative;
+.textImageContainer{
+    display: flex;
+    flex-direction: row;
 }
 
+.textContainer{
+    margin-left: 50px;
+    border: 5px solid #152033;
+    border-radius: 10px;
+    width: 50%;
+}
 
-.agentCard {
+.mainWeaponImageContainer{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fireRate , .magazineSize, .reloadTime{
+    padding-left: 30px;
+    border-radius: 0px 0px 10px 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.7rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ECE8E1;
+}
+.fireRate span , .magazineSize span, .reloadTime span{
+    margin-right: 20px;
+}
+
+.reloadTime{
+    margin-bottom: 0px;
+}
+
+.weaponImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sliderContainer{
+    margin-top: 97px;
+}
+
+.skinCard {
     min-width: 120px; /* Width of each card */
     height: 200px; /* Height of each card */
     background-color: #152033;
@@ -20,17 +56,17 @@
     transition: transform 0.2s; /* Smooth scaling effect */
 }
 
-.agentCard:hover {
+.skinCard:hover {
     transform: scale(1.05); /* Slightly scale up on hover */
 }
 
-.agentImage {
+.skinImage {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain; /* Scale images to fit within the card */
 }
  
-.agentCard p {
+.skinCard p {
     width: 100%;
     font-size: 2rem;
     text-align: center;
@@ -39,11 +75,3 @@
     align-items: center; /* Center text vertically */
     justify-content: center; /* Center text horizontally */
 } 
-
-
-.weaponImage{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
