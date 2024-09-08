@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./weapons.module.css";
 import Slider from "react-infinite-logo-slider";
+import WeaponModel from "./Weaponmodel";
 
 const Weapon = () => {
   const [weapon, setWeapon] = useState(null);
@@ -34,7 +35,7 @@ const Weapon = () => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: "#FF4656" }}>
+    <div style={{ backgroundColor: "rgb(255, 70, 85)" }}>
       <h1
         style={{ fontFamily: "Tungsten", fontSize: "90px", marginLeft: "50px" }}
       >
@@ -51,11 +52,7 @@ const Weapon = () => {
           </p>
         </div>
         <div className={styles.mainWeaponImageContainer}>
-          <img
-            src={weapon?.displayIcon}
-            alt={weapon?.displayName}
-            className={styles.weaponImage}
-          />
+          <WeaponModel/>
         </div>
       </div>
       <div className={styles.sliderContainer}>
