@@ -73,7 +73,7 @@ const SignUp = () => {
                         Create Account
                     </button>
                 </form>
-                <p className="signin-text" style={{ marginTop: '20px' , fontSize:'2rem'}}>
+                <p className="signin-text" style={{ marginTop: '20px' , fontSize:'1.3rem'}}>
                     Already Have An Account? <a href="/signin">Sign In</a>
                 </p>
             </div>

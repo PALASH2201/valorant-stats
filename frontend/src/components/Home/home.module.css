@@ -37,7 +37,7 @@
 
 .textContent {
   margin-left: 80px;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .appTag {
@@ -150,7 +150,7 @@
 }
 
 .viewWeaponsBtn {
-  margin-top: 40px;
+  margin-top: 30px;
   font-family: "Tungsten", sans-serif;
   letter-spacing: 2px;
   font-size: 1.5rem;

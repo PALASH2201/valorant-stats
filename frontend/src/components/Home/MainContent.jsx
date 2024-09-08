@@ -14,7 +14,7 @@ const MainContent = () => {
           </span>
           <p
             style={{
-              marginTop: "20px",
+              marginTop: "10px",
               fontFamily: "Montesserat",
               fontSize: "1.8rem",
             }}
