@@ -32,7 +32,7 @@ const SignUp = () => {
             const response_data = await response.json()
             alert(response_data.message)
         } else {
-            navigate('/home')
+            navigate('/signin')
         }
 
     }

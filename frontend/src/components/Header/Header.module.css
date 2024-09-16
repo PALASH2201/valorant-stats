@@ -72,4 +72,13 @@
     align-self: start;
     flex-basis: auto;
   }
+
+  .login_username {
+    font-size: 1.1rem;
+    text-align: center; 
+    align-self: start;
+    margin-bottom: 0px;
+    margin-top: 22px;
+    margin-right: 325px;
+  }
   

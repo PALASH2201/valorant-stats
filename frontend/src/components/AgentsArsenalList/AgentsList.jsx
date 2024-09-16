@@ -11,7 +11,12 @@ const AgentsList = () => {
   useEffect(() => {
     const fetchAgents = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/agents");
+        const token = localStorage.getItem('access_token');
+        const response = await fetch("http://127.0.0.1:5000/agents", {
+          headers: {
+            "Authorization": `Bearer ${token}`
+          }
+        });
         const data = await response.json();
         setAgents(data.agents);
       } catch (error) {
