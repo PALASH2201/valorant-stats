@@ -10,6 +10,7 @@ import SignUp from './components/Sign Up/SignUp.jsx';
 import SignIn from './components/Sign in/SignIn.jsx';
 import Home from './components/Home/Home.jsx';
 import Weapon from './components/Weapons/Weapon.jsx'
+import WeaponCarousel from './components/Weapons/WeaponCarousel.jsx'
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
       { path: "/signup", element: <SignUp /> },
       { path: "/signin", element: <SignIn /> },
       { path: "/home", element: <Home /> },
-      { path: "/weapons" , element: <Weapon/>}
+      { path: "/arsenal" , element: <WeaponCarousel/>},
+      { path: "/weapon/:uuid" , element: <Weapon/>}
     ],
   },
 ]);

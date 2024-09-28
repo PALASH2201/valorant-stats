@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState  } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import styles from "./weapons.module.css";
 import Slider from "react-infinite-logo-slider";
 import WeaponModel from "./Weaponmodel";
 
 const Weapon = () => {
+  //uuid = "55d8a0f4-4274-ca67-fe2c-06ab45efdf58";
+  const { uuid } = useParams();
   const [weapon, setWeapon] = useState(null);
   const [skins, setSkins] = useState([]);
   const [stats, setStats] = useState([]);
@@ -20,7 +23,7 @@ const Weapon = () => {
     const fetchWeapon = async () => {
       try {
         const response = await axiosInstance.get(
-          "/55d8a0f4-4274-ca67-fe2c-06ab45efdf58"
+          `${uuid}`
         );
         console.log(response.data.data);
         setWeapon(response.data.data);
@@ -58,7 +61,7 @@ const Weapon = () => {
       <div className={styles.sliderContainer}>
         <Slider
           width="450px"
-          duration={100}
+          duration={110}
           pauseOnHover={true}
           blurBorders={false}
         >
