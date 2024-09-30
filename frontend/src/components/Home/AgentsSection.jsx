@@ -3,8 +3,8 @@ import reynaArtwork from "../../assets/Reyna_artwork.png";
 import viperArtwork from "../../assets/Viper_artwork.png";
 import {useNavigate} from "react-router-dom";
 const AgentsSection = () => {
+  const navigate = useNavigate();
   const handleClick = () =>{
-     const navigate = useNavigate();
      navigate('/agents');
   }
   return (

@@ -2,8 +2,13 @@ import styles from "./home.module.css";
 import Bulldog from "../../assets/Bulldog.png";
 import Guardian from "../../assets/Guardian.png";
 import Judge from "../../assets/Judge.png";
+import { useNavigate } from "react-router-dom";
 
 const ArsenalSection = () => {
+  const  navigate = useNavigate();
+  const handleOnClick = () => {
+    navigate("/arsenal");
+  }
   return (
     <div className={styles.outerContainer}>
       <div style={{ color: "#000000" }} className={styles.textContainer}>
@@ -16,7 +21,7 @@ const ArsenalSection = () => {
           Purpose-built for team strategies, spectacular plays, and clutch
           moments. Make the play others will imitate for years to come..
         </p>
-        <button className={styles.viewWeaponsBtn}>View All Arsenal</button>
+        <button className={styles.viewWeaponsBtn} onClick={handleOnClick}>View All Arsenal</button>
       </div>
       <div className={styles.weaponsContainer}>
         <div className={styles.imageContainer}>
