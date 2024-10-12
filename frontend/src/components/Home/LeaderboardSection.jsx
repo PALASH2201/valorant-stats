@@ -1,8 +1,10 @@
 import styles from "./home.module.css";
 import board from "../../assets/Leaderboard.png";
 import stats from "../../assets/Stats ss.png";
+import {useNavigate} from "react-router-dom";
 
 const LeaderboardSection = () => {
+  const navigate = useNavigate();
   return (
     <div style={{ display: "flex" }} className={styles.sectionOuterContainer}>
       <div
@@ -26,7 +28,7 @@ const LeaderboardSection = () => {
             alt="leaderboard"
           />
         </div>
-        <button className={styles.viewLeaderboardBtn}>View Leaderboard</button>
+        <button className={styles.viewLeaderboardBtn} onClick={()=>navigate('/leaderboard')}>View Leaderboard</button>
       </div>
       <div
         style={{ backgroundColor: "#152033", width: "50%" }}

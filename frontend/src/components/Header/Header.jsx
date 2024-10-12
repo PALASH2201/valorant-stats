@@ -42,7 +42,7 @@ const Header = () => {
         <a href="#" className={styles.navLink}>
           INFO
         </a>
-        <a href="#" className={styles.navLink}>
+        <a href="/leaderboard" className={styles.navLink}>
           LEADERBOARD
         </a>
         <a className={styles.navLink} onClick={handleLogout}>LOGOUT</a>
