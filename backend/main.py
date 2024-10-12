@@ -177,7 +177,39 @@ def get_agent_by_name(name):
             return jsonify(info), 200
     
     # If no agent is found, return a 404 response
-    return jsonify({"message": "Agent not found"}), 404
+    return jsonify({"message": "Agent not found"}), 404 
+
+PLAYER_CARD_API_URL = "https://valorant-api.com/v1/playercards/{card_id}"
+# Function to get card image using card ID
+def get_card_image(card_id):
+    try:
+        response = requests.get(PLAYER_CARD_API_URL.format(card_id=card_id))
+        if response.status_code == 200:
+            card_data = response.json()
+            return card_data.get("data", {}).get("displayIcon", None)
+        else:
+            return None
+    except Exception as e:
+        print(f"Error fetching card image: {str(e)}")
+        return None
+
+# API route to receive player objects and fetch card images
+@app.route('/leaderboard', methods=['POST'])
+@jwt_required()
+def leaderboard_with_cards():
+    # Step 1: Get the player objects from the request body
+    players = request.json.get('players', [])
+    
+    # Step 2: Iterate through each player and fetch their card image
+    cardImageArray = []
+    for player in players:
+        card_id = player.get('card')
+        if card_id:
+            card_image = get_card_image(card_id)
+        cardImageArray.append(card_image)
+
+    # Step 3: Return the combined player data with card images as JSON
+    return jsonify(cardImageArray)
 
 if __name__=='__main__':
     with app.app_context():
