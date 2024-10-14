@@ -16,6 +16,7 @@ import ProtectedRoute from './components/ProtectedRoute.jsx';
 import Weapon from './components/Weapon/Weapon.jsx';
 import WeaponCarousel from './components/ArsenalList/WeaponsCarousel.jsx';
 import Leaderboard from './components/Leaderboard/Leaderboard.jsx'
+import AboutUs from './components/AboutUs/AboutUs.jsx'
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,8 @@ const router = createBrowserRouter([
       {path: "/agents/:name", element: <ProtectedRoute><AgentPage /></ProtectedRoute> },
       { path: "/arsenal" , element: <ProtectedRoute><WeaponCarousel/></ProtectedRoute>},
       { path: "/weapon/:uuid" , element: <ProtectedRoute><Weapon/></ProtectedRoute>},
-      { path: "/leaderboard" , element: <ProtectedRoute><Leaderboard/></ProtectedRoute>}
+      { path: "/leaderboard" , element: <ProtectedRoute><Leaderboard/></ProtectedRoute>},
+      { path: "/about" , element: <ProtectedRoute><AboutUs/></ProtectedRoute>},
     ],
   },
 ]);
