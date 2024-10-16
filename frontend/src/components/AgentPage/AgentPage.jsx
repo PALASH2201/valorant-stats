@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from "./AgentPage.module.css";
+import Loading from '../LoadingSpinner/Loading';
 
 const AgentPage = () => {
     const { name } = useParams(); // Extract the agent name from the URL
@@ -33,7 +34,7 @@ const AgentPage = () => {
         fetchAgent();
     }, [name]);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <div><Loading/></div>;
     if (error) return <div>Error: {error}</div>;
 
     return (

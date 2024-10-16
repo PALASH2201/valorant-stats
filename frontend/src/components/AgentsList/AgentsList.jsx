@@ -40,10 +40,10 @@ const AgentsList = () => {
     return chunks;
   };
 
-  const agentChunks = chunkAgents(agents, 5); 
+  const agentChunks = chunkAgents(agents, 5);
   return (
     <div className={styles.agentsListContainer}>
-    <p style={{fontFamily:'Tungsten' , fontSize:'100px' , color:'white' , marginBottom:'0px' ,marginLeft:'30px'}}>AGENTS</p>
+      <p style={{ fontFamily: 'Tungsten', fontSize: '100px', color: 'white', marginBottom: '0px', marginLeft: '30px' }}>AGENTS</p>
       <Carousel fade style={{ margin: "0px 0px" }} indicators={true} interval={null}>
         {agentChunks.map((chunk, index) => (
           <Carousel.Item key={index} >

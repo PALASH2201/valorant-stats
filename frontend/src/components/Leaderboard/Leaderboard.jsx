@@ -4,6 +4,7 @@ import LeaderboardEntry from "./LeaderboardEntry";
 import styles from "./leaderboard.module.css";
 import { Dropdown } from "react-bootstrap";
 import GroupedSelect from "./Groupselect";
+import Loading from "../LoadingSpinner/Loading";
 
 const Leaderboard = () => {
   const [region, setRegion] = useState("ap");
@@ -12,6 +13,7 @@ const Leaderboard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [leaders, setLeaders] = useState([]);
   const [cardImages ,setCardImages] = useState([]);
+  const [isLoading , setIsLoading] = useState(true);
   const entriesPerPage = 100;
 
   const handleRegionChange = (newRegion) => {
@@ -33,6 +35,7 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchLeaderboardData = async () => {
       try {
+        setIsLoading(true);
         const response = await axiosInstance.get();
         const players = [];
         for (let i = 0; i < 3; i++) {
@@ -43,11 +46,14 @@ const Leaderboard = () => {
         return players;
       } catch (error) {
         console.error("Error fetching leaderboard data:", error);
+      } finally{
+        setIsLoading(false);
       }
     };
 
     const fetchCards = async (players) => {
       try {
+        setIsLoading(true);
         const token = localStorage.getItem("access_token");
         const response = await axios.post(
           "http://127.0.0.1:5000/leaderboard",
@@ -61,6 +67,8 @@ const Leaderboard = () => {
         setCardImages(response.data);
       } catch (error) {
         console.error("Error fetching card images:", error);
+      } finally{
+        setIsLoading(false);
       }
     };
 
@@ -92,6 +100,7 @@ const Leaderboard = () => {
 
   return (
     <div className={styles.leaderboard}>
+      {isLoading ? <Loading/> : <></>}
       <div className={styles.leaderboardHeader}>
         <h2
           style={{
@@ -103,8 +112,9 @@ const Leaderboard = () => {
           View Leaderboard
         </h2>
       </div>
-      <div className={styles.leaderboardContainer}>
-        <div className={styles.tableContainer}>
+        {isLoading ? <></>: (
+          <div className={styles.leaderboardContainer}>
+          <div className={styles.tableContainer}>
           <div className={styles.filterButtons}>
             <div className={styles.regionSelector}>
               <Dropdown>
@@ -226,6 +236,7 @@ const Leaderboard = () => {
           </div>
         </div>
       </div>
+       )}
     </div>
   );
 };
