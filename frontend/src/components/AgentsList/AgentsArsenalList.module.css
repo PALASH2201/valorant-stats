@@ -1,8 +1,9 @@
 .agentsListContainer {
     width: 100%;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    white-space: nowrap; /* Prevents wrapping */
-    padding: 10px 0; /* Adds some padding */
+    height: 89vh;
+    overflow-x: auto; 
+    white-space: nowrap; 
+    padding: 10px 0; 
     background-color: #152033;
     position: relative;
 }
