@@ -70,11 +70,11 @@ const Leaderboard = () => {
         await fetchCards(players);
       }
     };
-    loadData(); 
+    loadData();
 
   }, [region, episode]);
 
-
+  
   const indexOfLastEntry = currentPage * entriesPerPage;
   const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
   const currentEntries = leaderboardData.slice(
