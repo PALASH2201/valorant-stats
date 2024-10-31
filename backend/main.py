@@ -1,5 +1,5 @@
 from flask import request, jsonify
-from config import app, db
+from config import app, db, socketio
 from models import User
 from sqlalchemy.exc import IntegrityError
 import sqlite3
@@ -8,6 +8,7 @@ from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identi
 import requests
 from google.oauth2 import id_token
 from google.auth.transport import requests as google_requests
+from flask_socketio import SocketIO, emit
 
 def verify_google_token_with_endpoint(token):
     response = requests.get(f"https://oauth2.googleapis.com/tokeninfo?id_token={token}")
@@ -211,8 +212,55 @@ def leaderboard_with_cards():
     # Step 3: Return the combined player data with card images as JSON
     return jsonify(cardImageArray)
 
+
+connected_users = {}
+
+@socketio.on('perform_connect')
+def handle_connect(user):
+    print("HELLOOOO")
+    if user:
+        username = user['username']
+        connected_users[request.sid] = username
+        emit('user_list', list(connected_users.values()), broadcast=True)
+    print(connected_users)
+
+@socketio.on('disconnect')
+def handle_disconnect():
+    if request.sid in connected_users:
+        del connected_users[request.sid]
+        emit('user_list', list(connected_users.values()), broadcast=True)
+
+@socketio.on('message')
+def handle_message(message):
+    username = connected_users.get(request.sid, 'Unknown User')
+    # Include username in the message
+    message_with_user = {
+        'user': username,
+        'message': message['content']
+    }
+    emit('message', message_with_user, broadcast=True)
+
+
+# @socketio.on("perform_connect")
+# def connected(username):
+#     print(f"client {username} has connected")
+#     emit("perform_connect",{"data":f"id: {username} is connected"})
+
+# @socketio.on('data')
+# def handle_message(data):
+#     """event listener when client types a message"""
+#     print("data from the front end: ",str(data))
+#     emit("data",{'data':data,'id':request.sid},broadcast=True)
+
+# @socketio.on("disconnect")
+# def disconnected():
+#     """event listener when client disconnects to the server"""
+#     print("user disconnected")
+#     emit("disconnect",f"user {request.sid} disconnected",broadcast=True)
+
+
 if __name__=='__main__':
     with app.app_context():
         db.create_all()
 
-    app.run(debug=True)
+    socketio.run(app, debug=True)
