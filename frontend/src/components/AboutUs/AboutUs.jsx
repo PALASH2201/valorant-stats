@@ -6,37 +6,37 @@ const teamMembers = [
         name: 'Palash Mahajan',
         role: 'Frontend Developer',
         skills: 'React | CSS | UI Design',
-        projects: '1. E-commerce Website\n2. Personal Portfolio\n3. Blog Platform',
-        education: 'B.Sc. in Computer Science, XYZ University',
+        projects: '1. Journalize - A Journal Website\n2. Movie Review Website \n3. Online Sudoku Game',
+        education: 'B.Tech in Computer Engineerin, Sardar Patel Institute of Technology',
         bio: 'Creating seamless user experiences with a passion for design and functionality. Palash transforms ideas into reality, making the web come alive.',
-        image: 'https://via.placeholder.com/150', // Replace with actual image URLs
+        image: 'https://avatars.githubusercontent.com/u/129573364?v=4', 
     },
     {
         name: 'Anushka Jadhav',
         role: 'Backend Developer',
         skills: 'Node.js | Express | Database Management',
         projects: '1. Task Management App\n2. RESTful API for E-commerce\n3. Blogging Platform',
-        education: 'B.Tech in Information Technology, ABC Institute',
+        education: 'B.Tech in Computer Engineerin, Sardar Patel Institute of Technology',
         bio: 'Master of server-side technologies, Anushka ensures smooth data flow, making complex processes feel simple and intuitive.',
-        image: 'https://via.placeholder.com/150', // Replace with actual image URLs
+        image: 'https://avatars.githubusercontent.com/u/145856651?v=4', 
     },
     {
         name: 'Krishna Sharma',
         role: 'UI/UX Designer',
         skills: 'Figma | Prototyping | User Research',
         projects: '1. Mobile App Design\n2. Website Redesign for Startup\n3. User Research for SaaS Product',
-        education: 'M.A. in Design, DEF University',
+        education: 'B.Tech in Computer Engineerin, Sardar Patel Institute of Technology',
         bio: 'Bringing creativity to life, Krishna focuses on enhancing user satisfaction by crafting intuitive designs that are both beautiful and functional.',
-        image: 'https://via.placeholder.com/150', // Replace with actual image URLs
+        image: 'https://avatars.githubusercontent.com/u/144263257?v=4', 
     },
     {
         name: 'Manan Kher',
         role: 'Project Manager',
         skills: 'Leadership | Agile | Communication',
         projects: '1. Team Coordination for Hackathon\n2. Agile Transformation in Projects\n3. Workshop on Project Management',
-        education: 'B.E. in Computer Engineering, GHI College',
+        education: 'B.Tech in Computer Engineerin, Sardar Patel Institute of Technology',
         bio: 'An orchestrator of teamwork, Manan skillfully coordinates projects, managing timelines and leading the team toward success with clarity and direction.',
-        image: 'https://via.placeholder.com/150', // Replace with actual image URLs
+        image: 'https://avatars.githubusercontent.com/u/125725838?v=4', 
     },
 ];
 
