@@ -17,6 +17,7 @@ import Weapon from './components/Weapon/Weapon.jsx';
 import WeaponCarousel from './components/ArsenalList/WeaponsCarousel.jsx';
 import Leaderboard from './components/Leaderboard/Leaderboard.jsx'
 import AboutUs from './components/AboutUs/AboutUs.jsx'
+import Chatroom from './components/Chatroom/Chatroom.jsx'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
       { path: "/weapon/:uuid" , element: <ProtectedRoute><Weapon/></ProtectedRoute>},
       { path: "/leaderboard" , element: <ProtectedRoute><Leaderboard/></ProtectedRoute>},
       { path: "/about" , element: <ProtectedRoute><AboutUs/></ProtectedRoute>},
+      { path: "/chat" , element: <ProtectedRoute><Chatroom/></ProtectedRoute>},
     ],
   },
 ]);
