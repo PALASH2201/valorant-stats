@@ -25,7 +25,7 @@ const Weapon = () => {
         const response = await axiosInstance.get(
           `${uuid}`
         );
-        console.log(response.data.data);
+        //console.log(response.data.data);
         setWeapon(response.data.data);
         setSkins(response.data.data.skins);
         setStats(response.data.data.weaponStats);
@@ -55,7 +55,7 @@ const Weapon = () => {
           </p>
         </div>
         <div className={styles.mainWeaponImageContainer}>
-          <WeaponModel/>
+          <WeaponModel name={weapon?.displayName} />
         </div>
       </div>
       <div className={styles.sliderContainer}>

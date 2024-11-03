@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend  # Path to your backend folder
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"  # Maps port 5000 of the host to the backend container
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=main.py  # Replace with your Flask entry file if different
+    volumes:
+      - ./backend:/app  # Optional for development to reflect changes without rebuilding
+
+  frontend:
+    build:
+      context: ./frontend  # Path to your frontend folder
+      dockerfile: Dockerfile
+    ports:
+      - "3000:4173"  # Maps port 3000 of the host to port 4173 in the container
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://backend:5000  # API URL for the Flask backend
+    volumes:
+      - ./frontend:/app  # Optional for development to reflect changes without rebuilding

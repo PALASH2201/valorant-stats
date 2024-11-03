@@ -2,7 +2,6 @@ from flask import request, jsonify
 from config import app, db, socketio
 from models import User
 from sqlalchemy.exc import IntegrityError
-import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity, create_refresh_token
 import requests
