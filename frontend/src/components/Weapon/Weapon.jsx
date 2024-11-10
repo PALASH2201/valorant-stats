@@ -40,7 +40,7 @@ const Weapon = () => {
   return (
     <div style={{ backgroundColor: "rgb(255, 70, 85)" }}>
       <h1
-        style={{ fontFamily: "Tungsten", fontSize: "90px", marginLeft: "50px" }}
+        style={{ color:'black',fontFamily: "Tungsten", fontSize: "90px", marginLeft: "50px" }}
       >
         {weapon?.displayName}
       </h1>
