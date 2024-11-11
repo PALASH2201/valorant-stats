@@ -56,7 +56,7 @@ const Leaderboard = () => {
         setIsLoading(true);
         const token = localStorage.getItem("access_token");
         const response = await axios.post(
-          "http://127.0.0.1:5000/leaderboard",
+          "https://valorant-stats.onrender.com/leaderboard",
           { players: players },
           {
             headers: {

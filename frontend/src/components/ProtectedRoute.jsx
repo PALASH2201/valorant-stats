@@ -20,7 +20,7 @@ const refreshToken = async (setAccessToken, setRefreshing) => {
   }
 
   try {
-    const response = await fetch("http://127.0.0.1:5000/refresh", {
+    const response = await fetch("https://valorant-stats.onrender.com/refresh", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${refresh_token}`,

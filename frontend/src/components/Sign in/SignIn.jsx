@@ -26,7 +26,7 @@ const SignIn = () => {
             email,
             password,
         }
-        const url = "http://127.0.0.1:5000/login" 
+        const url = "https://valorant-stats.onrender.com/login" 
         const options = {
             method: "POST",
             headers: {

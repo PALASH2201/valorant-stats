@@ -19,7 +19,7 @@ const SignUp = () => {
             email,
             password,
         }
-        const url = "http://127.0.0.1:5000/register" 
+        const url = "https://valorant-stats.onrender.com/register" 
         const options = {
             method: "POST",
             headers: {

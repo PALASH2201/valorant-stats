@@ -14,7 +14,7 @@ const App = () => {
     <div className={styles.app}>
       {showLandingPage && <MainContent />}
       {showHeader && <Header />}
-      <GoogleOAuthProvider clientId="664359618308-c4ne7t8db9vecfu317rmjd4fb0rkkj15.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
       <Outlet/>
       </GoogleOAuthProvider>
     </div>
